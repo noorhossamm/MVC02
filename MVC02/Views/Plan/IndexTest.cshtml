@@ -1,0 +1,52 @@
+﻿
+@using MVC02.Entities;
+@model Plan
+@{
+    string pageTitle = "IndexTest";
+    int age = 20;
+List<int> numbers = [1, 2, 3, 4, 5 ];
+
+}
+
+<!DocType html>
+<html>
+<head>
+    <title> @pageTitle</title>
+
+</head>
+<body>
+    <h1>"Welcome to the page"</h1>
+    <h2> @pageTitle</h2>
+
+    <p> @age years old</p>
+
+@if(age >18)
+{
+    <p> You are an adult</p>
+}
+else
+{
+    <p> You are a minor</p>
+}
+<ul>
+        @foreach (var n in numbers)
+            {
+                <li>"Number :@n"</li>
+            }
+
+</ul>
+
+    @*<a href="/Home/Index"></a> *@
+<a>asp-controller="Home" asp-action="Index"</a>
+
+
+<environment include="Development">
+<p>"Running in development"</p>
+</environment>
+
+    <environment exclude="Development">
+        <p>"Running in Production"</p>
+    </environment>
+
+</body>
+</html>
